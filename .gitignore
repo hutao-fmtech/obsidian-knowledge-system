@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Obsidian
+.obsidian/workspace
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.obsidian/app.json
+
+# 个人私密内容（按需取消注释）
+# 20-日志/
+# 03-领域/财务规划/
+
+# Obsidian 插件二进制文件（由 Obsidian 自动下载）
+.obsidian/plugins/*/main.js
+.obsidian/plugins/*/styles.css
+
+# 附件中的大文件
+90-附件/files/
+90-附件/audio/

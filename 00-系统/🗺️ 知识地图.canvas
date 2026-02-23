@@ -1,0 +1,33 @@
+{
+	"nodes":[
+		{"id":"group-para","type":"group","x":-970,"y":-1040,"width":1540,"height":340,"color":"5","label":"PARA 架构"},
+		{"id":"group-knowledge","type":"group","x":-970,"y":0,"width":1540,"height":310,"color":"4","label":"知识沉淀"},
+		{"id":"zettelkasten","type":"text","text":"# 🗂️ 10 卡片盒\n\nZettelkasten 永久笔记\n- 概念卡片\n- 方法卡片\n- 观点卡片\n- 索引卡片（MOC）","x":-950,"y":30,"width":270,"height":200,"color":"1"},
+		{"id":"journal","type":"text","text":"# 📅 20 日志\n\n时间线记录\n- 日记（每日）\n- 周记\n- 月记\n- 年记","x":-650,"y":30,"width":250,"height":180,"color":"2"},
+		{"id":"output","type":"text","text":"# ✍️ 30 输出\n\n创作与分享\n- 微信公众号\n- 博客文章\n- 技术分享\n- 演讲稿\n- 作品集","x":-370,"y":30,"width":250,"height":210,"color":"3"},
+		{"id":"attachments","type":"text","text":"# 📎 90 附件\n\n媒体文件\n- images\n  ├ cover-image\n  └ illustrations\n- files / audio","x":-90,"y":30,"width":250,"height":200,"color":"6"},
+		{"id":"workflow","type":"text","text":"# 🔄 信息流转\n\n## 收集 → 整理 → 链接 → 输出\n\n1️⃣ **收集**: 随时记录到收件箱\n2️⃣ **整理**: 每日分类到 PARA\n3️⃣ **链接**: 每周建立连接\n4️⃣ **输出**: 基于卡片盒创作","x":680,"y":-750,"width":340,"height":240,"color":"5"},
+		{"id":"templates","type":"text","text":"# 📋 核心模板\n\n**日志类**\n- 日记 / 周记 / 月记\n\n**项目类**\n- 项目笔记 / 学习项目\n- 会议记录\n\n**资源类**\n- 阅读笔记 / 文章笔记\n\n**输出类**\n- 博客 / 演讲稿\n\n**知识类**\n- 卡片盒笔记 / MOC / 领域总览\n\n**技术领导力**\n- 1on1 / ADR / 决策记录\n- 项目 / 周报","x":680,"y":-470,"width":340,"height":440,"color":"4"},
+		{"id":"inbox","type":"text","text":"# 📥 01 收件箱\n\n快速收集区\n- 快速笔记\n- 待处理\n- 灵感闪念","x":-950,"y":-1010,"width":250,"height":170,"color":"1"},
+		{"id":"projects","type":"text","text":"# 🎯 02 项目\n\nPARA · 有截止日期\n- 工作项目\n- 个人项目\n- 学习项目","x":-670,"y":-1010,"width":250,"height":170,"color":"2"},
+		{"id":"areas","type":"text","text":"# 🌟 03 领域\n\nPARA · 持续关注\n- 软件工程\n- 计算机从业\n- 技术领导力\n- 职业发展\n- 健康管理\n- 财务规划\n- 人际关系\n- 兴趣爱好\n- 读书写作","x":-390,"y":-1010,"width":250,"height":280,"color":"3"},
+		{"id":"resources","type":"text","text":"# 📚 04 资源\n\nPARA · 外部参考\n- 阅读笔记\n- 课程学习\n- 工具 / 工具清单\n- 媒体库\n- 参考资料","x":-110,"y":-1010,"width":250,"height":210,"color":"4"},
+		{"id":"archive","type":"text","text":"# 📦 05 归档\n\nPARA · 已完成\n按年份归档\n过时信息","x":170,"y":-1010,"width":250,"height":170,"color":"6"},
+		{"id":"home","type":"file","file":"00-系统/🏠 HOME.md","x":-135,"y":-450,"width":300,"height":200,"color":"5"}
+	],
+	"edges":[
+		{"id":"e1","fromNode":"inbox","fromSide":"bottom","toNode":"home","toSide":"top","label":"临时收集"},
+		{"id":"e2","fromNode":"home","fromSide":"top","toNode":"projects","toSide":"bottom","label":"执行"},
+		{"id":"e3","fromNode":"home","fromSide":"top","toNode":"areas","toSide":"bottom","label":"持续关注"},
+		{"id":"e4","fromNode":"home","fromSide":"top","toNode":"resources","toSide":"bottom","label":"参考"},
+		{"id":"e5","fromNode":"projects","fromSide":"right","toNode":"archive","toSide":"left","label":"完成后归档"},
+		{"id":"e6","fromNode":"home","fromSide":"bottom","toNode":"zettelkasten","toSide":"top","label":"沉淀知识"},
+		{"id":"e7","fromNode":"home","fromSide":"bottom","toNode":"journal","toSide":"top","label":"记录时间线"},
+		{"id":"e8","fromNode":"zettelkasten","fromSide":"right","toNode":"output","toSide":"left","label":"创作输出"},
+		{"id":"e9","fromNode":"resources","fromSide":"bottom","toNode":"zettelkasten","toSide":"top","label":"提炼"},
+		{"id":"e10","fromNode":"templates","fromSide":"left","toNode":"home","toSide":"right","label":"快速创建"},
+		{"id":"e11","fromNode":"workflow","fromSide":"left","toNode":"home","toSide":"right","label":"工作流指导"},
+		{"id":"e12","fromNode":"areas","fromSide":"bottom","toNode":"zettelkasten","toSide":"top","label":"领域知识沉淀"},
+		{"id":"e13","fromNode":"output","fromSide":"right","toNode":"attachments","toSide":"left","label":"引用媒体"}
+	]
+}
