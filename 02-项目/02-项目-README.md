@@ -106,4 +106,4 @@ LIMIT 10
 
 ---
 
-*最后更新：2026-01-22*
+*最后更新：`= dateformat(this.file.mtime, "yyyy-MM-dd")`*

@@ -1,6 +1,6 @@
 ---
 title: "MOC - {{title}}"
-created: {{date:YYYY-MM-DD}}
+created: <% tp.date.now("YYYY-MM-DD") %>
 tags: [MOC, 知识地图]
 type: 索引卡片
 status: 🌱 建设中
@@ -166,7 +166,7 @@ SORT status ASC
 
 ## 🔄 更新日志
 
-### {{date:YYYY-MM-DD}}
+### <% tp.date.now("YYYY-MM-DD") %>
 - 创建此地图
 
 ### [日期]
@@ -174,7 +174,7 @@ SORT status ASC
 
 ---
 
-**创建时间**: {{date:YYYY-MM-DD}}
-**最后更新**: {{date:YYYY-MM-DD}}
+**创建时间**: <% tp.date.now("YYYY-MM-DD") %>
+**最后更新**: <% tp.date.now("YYYY-MM-DD") %>
 **完善度**: 🌱 萌芽 / 🌿 成长 / 🌳 成熟
 **相关笔记数**: [X] 篇

@@ -1,6 +1,6 @@
 ---
 title: "教程：{{title}}"
-created: {{date:YYYY-MM-DD}}
+created: <% tp.date.now("YYYY-MM-DD") %>
 tags:
   - 输出/教程
   - 草稿

@@ -3,7 +3,7 @@ title: "{{title}}"
 author:
 publisher:
 publish_date:
-read_date: {{date:YYYY-MM-DD}}
+read_date: <% tp.date.now("YYYY-MM-DD") %>
 rating:
 tags: [阅读笔记, 书籍]
 status: 阅读中
@@ -20,7 +20,7 @@ status: 阅读中
 | 出版时间 |  |
 | ISBN |  |
 | 豆瓣评分 |  |
-| 阅读时间 | {{date:YYYY-MM-DD}} ~ |
+| 阅读时间 | <% tp.date.now("YYYY-MM-DD") %> ~ |
 | 我的评分 | ⭐️/5 |
 
 ## 🎯 阅读目的
@@ -102,5 +102,5 @@ status: 阅读中
 
 ---
 
-**创建时间**: {{date:YYYY-MM-DD}}
-**最后更新**: {{date:YYYY-MM-DD}}
+**创建时间**: <% tp.date.now("YYYY-MM-DD") %>
+**最后更新**: <% tp.date.now("YYYY-MM-DD") %>

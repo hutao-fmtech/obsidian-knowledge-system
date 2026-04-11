@@ -2,7 +2,7 @@
 type: decision
 decision-type: 技术  # 技术 | 产品 | 组织 | 流程
 status: 待决策  # 待决策 | 已决策 | 已执行 | 已废弃
-date: {{date}}
+date: <% tp.date.now("YYYY-MM-DD") %>
 decision-makers:
   -
 impact: 中  # 高 | 中 | 低
@@ -134,7 +134,7 @@ tags:
 3.
 
 ### 决策日期
-{{date}}
+<% tp.date.now("YYYY-MM-DD") %>
 
 ### 决策方式
 - [ ] 共识决策 (Consensus)
@@ -260,7 +260,7 @@ tags:
 
 | 日期 | 事件 | 备注 |
 |------|------|------|
-| {{date}} | 决策提出 |  |
+| <% tp.date.now("YYYY-MM-DD") %> | 决策提出 |  |
 |  | 收集反馈 |  |
 |  | 做出决策 |  |
 |  | 开始执行 |  |
@@ -274,4 +274,4 @@ tags:
 ---
 
 *记录人: [你的名字]*
-*创建日期: {{date}}*
+*创建日期: <% tp.date.now("YYYY-MM-DD") %>*

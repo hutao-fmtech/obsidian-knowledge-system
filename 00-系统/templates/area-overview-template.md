@@ -1,6 +1,6 @@
 ---
 title: "{{title}}"
-created: {{date:YYYY-MM-DD}}
+created: <% tp.date.now("YYYY-MM-DD") %>
 tags: [领域总览]
 area: 职业发展
 status: 🟢 健康
@@ -23,9 +23,9 @@ status: 🟢 健康
 
 | 指标 | 当前值 | 目标值 | 状态 | 更新时间 |
 |------|--------|--------|------|----------|
-|      |        |        | 🟢/🟡/🔴 | {{date:YYYY-MM-DD}} |
-|      |        |        | 🟢/🟡/🔴 | {{date:YYYY-MM-DD}} |
-|      |        |        | 🟢/🟡/🔴 | {{date:YYYY-MM-DD}} |
+|      |        |        | 🟢/🟡/🔴 | <% tp.date.now("YYYY-MM-DD") %> |
+|      |        |        | 🟢/🟡/🔴 | <% tp.date.now("YYYY-MM-DD") %> |
+|      |        |        | 🟢/🟡/🔴 | <% tp.date.now("YYYY-MM-DD") %> |
 
 **健康度**: 🟢 健康 / 🟡 需关注 / 🔴 有风险
 
@@ -91,7 +91,7 @@ SORT status ASC, priority DESC
 
 ### 最近进展
 
-#### {{date:YYYY-MM}}
+#### <% tp.date.now("YYYY-MM") %>
 
 
 ### 待改进事项
@@ -113,16 +113,16 @@ SORT status ASC, priority DESC
 
 ### 季度回顾
 
-#### {{date:YYYY-[Q]Q}}
+#### <% tp.date.now("YYYY-[Q]Q") %>
 
 
 ### 年度回顾
 
-#### {{date:YYYY}}
+#### <% tp.date.now("YYYY") %>
 
 
 ---
 
-**创建时间**: {{date:YYYY-MM-DD}}
-**最后更新**: {{date:YYYY-MM-DD}}
+**创建时间**: <% tp.date.now("YYYY-MM-DD") %>
+**最后更新**: <% tp.date.now("YYYY-MM-DD") %>
 **健康度**: 🟢

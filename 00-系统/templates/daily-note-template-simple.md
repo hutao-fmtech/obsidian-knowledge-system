@@ -1,12 +1,12 @@
 
 ---
-date: {{date:YYYY-MM-DD}}
-day: {{date:dddd}}
-week: {{date:YYYY-[W]ww}}
+date: <% tp.date.now("YYYY-MM-DD") %>
+day: <% tp.date.now("dddd") %>
+week: <% tp.date.now("YYYY-[W]WW") %>
 tags: [日记]
 ---
 
-# {{date:YYYY-MM-DD}} {{date:dddd}}
+# <% tp.date.now("YYYY-MM-DD") %> <% tp.date.now("dddd") %>
 
 ## 📋 今日目标
 
@@ -45,4 +45,4 @@ tags: [日记]
 
 ---
 
-⬅️ [[{{date-1d:YYYY-MM-DD}}]] | [[20-日志/日记/{{date:YYYY}}/README|返回日记目录]] | [[{{date+1d:YYYY-MM-DD}}]] ➡️
+⬅️ [[<% tp.date.now("YYYY-MM-DD", -1) %>]] | [[20-日志/日记/<% tp.date.now("YYYY") %>/README|返回日记目录]] | [[<% tp.date.now("YYYY-MM-DD", 1) %>]] ➡️

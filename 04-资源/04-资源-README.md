@@ -625,4 +625,4 @@ rating: ⭐⭐⭐⭐⭐
 
 *资源库是知识的仓库，要定期清理和使用*
 
-*最后更新：2026-01-22*
+*最后更新：`= dateformat(this.file.mtime, "yyyy-MM-dd")`*

@@ -1,6 +1,6 @@
 ---
 title: "学习项目：{{title}}"
-created: {{date:YYYY-MM-DD}}
+created: <% tp.date.now("YYYY-MM-DD") %>
 tags:
   - 项目/学习
   - 学习
@@ -92,7 +92,7 @@ progress: 0%
 
 ## 📝 学习笔记
 
-### {{date:YYYY-MM-DD}}
+### <% tp.date.now("YYYY-MM-DD") %>
 **学习内容**:
 
 **重点理解**:

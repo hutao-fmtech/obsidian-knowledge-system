@@ -216,5 +216,5 @@ LIMIT 5
 
 ---
 
-*项目创建日期: {{date}}*
-*最后更新: {{date}}*
+*项目创建日期: <% tp.date.now("YYYY-MM-DD") %>*
+*最后更新: <% tp.date.now("YYYY-MM-DD") %>*

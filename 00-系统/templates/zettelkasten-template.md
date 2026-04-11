@@ -1,7 +1,7 @@
 ---
-id: Z{{date:YYYYMMDDHHmmss}}
+id: Z<% tp.date.now("YYYYMMDDHHmmss") %>
 title: "{{title}}"
-created: {{date:YYYY-MM-DD}}
+created: <% tp.date.now("YYYY-MM-DD") %>
 tags: [卡片盒]
 type: 概念卡片
 ---
@@ -67,7 +67,7 @@ type: 概念卡片
 
 ---
 
-**卡片ID**: Z{{date:YYYYMMDDHHmmss}}
-**创建时间**: {{date:YYYY-MM-DD HH:mm}}
-**最后更新**: {{date:YYYY-MM-DD HH:mm}}
+**卡片ID**: Z<% tp.date.now("YYYYMMDDHHmmss") %>
+**创建时间**: <% tp.date.now("YYYY-MM-DD HH:mm") %>
+**最后更新**: <% tp.date.now("YYYY-MM-DD HH:mm") %>
 **卡片状态**: 🌱萌芽 / 🌿成长 / 🌳成熟

@@ -1,12 +1,12 @@
 ---
-date: {{date:YYYY-MM-DD}}
-month: {{date:YYYY-MM}}
+date: <% tp.date.now("YYYY-MM-DD") %>
+month: <% tp.date.now("YYYY-MM") %>
 tags: [月记, 复盘]
 ---
 
-# {{date:YYYY年MM月}} 月度复盘
+# <% tp.date.now("YYYY年MM月") %> 月度复盘
 
-> 📅 {{date:YYYY-MM-01}} ~ {{date:YYYY-MM-DD}}
+> 📅 <% tp.date.now("YYYY-MM-01") %> ~ <% tp.date.now("YYYY-MM-DD") %>
 
 ## 📊 月度数据看板
 
@@ -127,4 +127,4 @@ tags: [月记, 复盘]
 
 ---
 
-⬅️ [[{{date-1M:YYYY-MM}}|上月]] | [[20-日志/月记/README|返回月记目录]] | [[{{date+1M:YYYY-MM}}|下月]] ➡️
+⬅️ [[<% tp.date.now("YYYY-MM", -30) %>|上月]] | [[20-日志/月记/README|返回月记目录]] | [[<% tp.date.now("YYYY-MM", 30) %>|下月]] ➡️

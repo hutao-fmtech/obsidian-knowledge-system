@@ -1,17 +1,17 @@
 ---
 type: 1on1
 person:
-date: {{date}}
+date: <% tp.date.now("YYYY-MM-DD") %>
 frequency: 双周  # 每周 | 双周 | 每月
 tags:
   - 1on1
   - team
 ---
 
-# 1-1: [姓名] - {{date}}
+# 1-1: [姓名] - <% tp.date.now("YYYY-MM-DD") %>
 
 ## 📅 会议信息
-- **日期**: {{date}}
+- **日期**: <% tp.date.now("YYYY-MM-DD") %>
 - **时长**: 30-60分钟
 - **上次会议**: [[上次1-1链接]]
 

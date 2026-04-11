@@ -1,12 +1,12 @@
 ---
 title: "{{title}}"
-created: {{date:YYYY-MM-DD}}
+created: <% tp.date.now("YYYY-MM-DD") %>
 tags:
   - 资源/文章笔记
   - 待整理
 source_url:
 author:
-read_date: {{date:YYYY-MM-DD}}
+read_date: <% tp.date.now("YYYY-MM-DD") %>
 rating:
 status: 未读
 ---
@@ -18,7 +18,7 @@ status: 未读
 - **作者**：
 - **来源**：
 - **发布日期**：
-- **阅读日期**：{{date:YYYY-MM-DD}}
+- **阅读日期**：<% tp.date.now("YYYY-MM-DD") %>
 - **文章链接**：
 - **评分**：⭐⭐⭐⭐⭐ (5分)
 

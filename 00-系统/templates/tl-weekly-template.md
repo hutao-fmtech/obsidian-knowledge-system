@@ -1,7 +1,7 @@
 ---
 type: meeting
 meeting-type: weekly
-date: {{date}}
+date: <% tp.date.now("YYYY-MM-DD") %>
 attendees:
   -
 tags:
@@ -9,10 +9,10 @@ tags:
   - meeting
 ---
 
-# 周会 - Week {{date:WW}}, {{date:YYYY}}
+# 周会 - Week <% tp.date.now("WW") %>, <% tp.date.now("YYYY") %>
 
 ## 📅 会议信息
-- **日期**: {{date}}
+- **日期**: <% tp.date.now("YYYY-MM-DD") %>
 - **时间**: 10:00-11:00
 - **参与者**: 全体团队成员
 - **主持人**:
@@ -172,7 +172,7 @@ tags:
 ---
 
 ## 📅 下周会议
-- **时间**: {{date+7}}
+- **时间**: <% tp.date.now("YYYY-MM-DD", 7) %>
 - **预定议题**:
   -
 

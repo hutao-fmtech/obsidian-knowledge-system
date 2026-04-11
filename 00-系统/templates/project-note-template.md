@@ -1,6 +1,6 @@
 ---
 title: "{{title}}"
-created: {{date:YYYY-MM-DD}}
+created: <% tp.date.now("YYYY-MM-DD") %>
 status: 🚧 进行中
 priority: 中
 start_date:
@@ -117,7 +117,7 @@ category: 工作项目
 
 ## 📝 项目日志
 
-### {{date:YYYY-MM-DD}}
+### <% tp.date.now("YYYY-MM-DD") %>
 
 
 ### [日期]
@@ -164,6 +164,6 @@ category: 工作项目
 
 ---
 
-**创建时间**: {{date:YYYY-MM-DD}}
-**最后更新**: {{date:YYYY-MM-DD}}
+**创建时间**: <% tp.date.now("YYYY-MM-DD") %>
+**最后更新**: <% tp.date.now("YYYY-MM-DD") %>
 **项目状态**: 🚧 进行中

@@ -1,7 +1,7 @@
 ---
 title: "{{title}}"
-date: {{date:YYYY-MM-DD}}
-time: {{time:HH:mm}}
+date: <% tp.date.now("YYYY-MM-DD") %>
+time: <% tp.date.now("HH:mm") %>
 tags: [会议记录]
 meeting_type: 例会
 ---
@@ -12,7 +12,7 @@ meeting_type: 例会
 
 | 项目 | 内容 |
 |------|------|
-| 会议时间 | {{date:YYYY-MM-DD}} {{time:HH:mm}} |
+| 会议时间 | <% tp.date.now("YYYY-MM-DD") %> <% tp.date.now("HH:mm") %> |
 | 会议时长 |  分钟 |
 | 会议地点 |  |
 | 主持人 |  |
@@ -89,5 +89,5 @@ meeting_type: 例会
 
 ---
 
-**创建时间**: {{date:YYYY-MM-DD HH:mm}}
+**创建时间**: <% tp.date.now("YYYY-MM-DD HH:mm") %>
 **相关项目**:

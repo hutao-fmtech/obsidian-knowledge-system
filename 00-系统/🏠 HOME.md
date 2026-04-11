@@ -188,5 +188,5 @@ SORT length(rows) DESC
 
 ---
 
-**最后更新**: 2026-01-22
+**最后更新**: `= dateformat(this.file.mtime, "yyyy-MM-dd")`
 **系统版本**: v1.0
