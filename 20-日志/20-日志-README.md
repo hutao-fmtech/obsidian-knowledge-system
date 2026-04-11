@@ -13,8 +13,13 @@ tags: [日志, 索引]
 ## 📂 日志类型
 
 ### 📔 日记（Daily）
-- [[20-日志/日记/2026/01/2026-01-22|今天]] - 今日记录
-- [[20-日志/日记/README|日记归档]] - 所有日记
+```dataviewjs
+const today = moment().format("YYYY-MM-DD");
+const yyyy = moment().format("YYYY");
+const mm = moment().format("MM");
+dv.paragraph(`- [[20-日志/日记/${yyyy}/${mm}/${today}|今天]] - 今日记录`);
+dv.paragraph(`- [[20-日志/日记/${yyyy}/README|日记归档]] - 所有日记`);
+```
 
 **日记用途**：
 - 记录当天的事件和感受
@@ -23,8 +28,11 @@ tags: [日志, 索引]
 - 感恩与反思
 
 ### 📅 周记（Weekly）
-- [[20-日志/周记/2026-W04|本周]] - 本周回顾
-- [[20-日志/周记/README|周记归档]] - 所有周记
+```dataviewjs
+const week = moment().format("YYYY-[W]WW");
+dv.paragraph(`- [[20-日志/周记/${week}|本周]] - 本周回顾`);
+dv.paragraph(`- [[20-日志/周记/README|周记归档]] - 所有周记`);
+```
 
 **周记用途**：
 - 回顾本周成就和挑战
@@ -33,8 +41,11 @@ tags: [日志, 索引]
 - 提炼本周收获
 
 ### 📆 月记（Monthly）
-- [[20-日志/月记/2026-01|本月]] - 本月复盘
-- [[20-日志/月记/README|月记归档]] - 所有月记
+```dataviewjs
+const month = moment().format("YYYY-MM");
+dv.paragraph(`- [[20-日志/月记/${month}|本月]] - 本月复盘`);
+dv.paragraph(`- [[20-日志/月记/README|月记归档]] - 所有月记`);
+```
 
 **月记用途**：
 - 月度目标达成评估
@@ -43,8 +54,11 @@ tags: [日志, 索引]
 - 月度数据分析
 
 ### 📊 年记（Yearly）
-- [[20-日志/年记/2026|今年]] - 2026年度回顾
-- [[20-日志/年记/README|年记归档]] - 所有年记
+```dataviewjs
+const yyyy = moment().format("YYYY");
+dv.paragraph(`- [[20-日志/年记/${yyyy}|今年]] - ${yyyy} 年度回顾`);
+dv.paragraph(`- [[20-日志/年记/README|年记归档]] - 所有年记`);
+```
 
 **年记用途**：
 - 年度目标回顾
@@ -99,7 +113,7 @@ LIMIT 5
 
 ## 🔧 快速操作
 
-- [[daily-note-template|新建日记]]
+- [[00-系统/templates/daily-note-template|新建日记]]
 - [[00-系统/templates/weekly-review-template|新建周记]]
 - [[00-系统/templates/monthly-review-template|新建月记]]
 
@@ -130,4 +144,4 @@ GROUP BY folder
 
 ---
 
-*最后更新：2026-01-22*
+*最后更新：`= dateformat(this.file.mtime, "yyyy-MM-dd")`*

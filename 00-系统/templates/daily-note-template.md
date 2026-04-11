@@ -1,12 +1,25 @@
+<%*
+// 只对 YYYY-MM-DD 格式的文件名应用此模板
+if (!tp.file.title.match(/^\d{4}-\d{2}-\d{2}$/)) {
+  return;
+}
+const date = tp.file.title;
+const yyyy = moment(date).format("YYYY");
+const mm = moment(date).format("MM");
+const targetPath = `20-日志/日记/${yyyy}/${mm}/${date}`;
+if (tp.file.path(true) !== targetPath + ".md") {
+  await tp.file.move(targetPath);
+}
+-%>
 ---
-date: <% tp.file.creation_date("YYYY-MM-DD") %>
-day: <% tp.file.creation_date("dddd") %>
-week: <% tp.file.creation_date("YYYY-[W]ww") %>
+date: <% date %>
+day: <% moment(date).format("dddd") %>
+week: <% moment(date).format("YYYY-[W]WW") %>
 tags: [日记]
 ---
 
 
-# <% tp.file.creation_date("YYYY-MM-DD") %> <% tp.file.creation_date("dddd") %>
+# <% date %> <% moment(date).format("dddd") %>
 
 ## 📋 今日目标
 
@@ -45,4 +58,12 @@ tags: [日记]
 
 ---
 
-⬅️ [[<% tp.date.now("YYYY-MM-DD", -1) %>]] | [[20-日志/日记/<% tp.file.creation_date("YYYY") %>/README|返回日记目录]] | [[<% tp.date.now("YYYY-MM-DD", 1) %>]] ➡️
+<%*
+const prevDate = moment(date).subtract(1, "days");
+const nextDate = moment(date).add(1, "days");
+const prevStr = prevDate.format("YYYY-MM-DD");
+const nextStr = nextDate.format("YYYY-MM-DD");
+const prevPath = `20-日志/日记/${prevDate.format("YYYY")}/${prevDate.format("MM")}/${prevStr}`;
+const nextPath = `20-日志/日记/${nextDate.format("YYYY")}/${nextDate.format("MM")}/${nextStr}`;
+tR += `⬅️ [[${prevPath}|${prevStr}]] | [[20-日志/日记/${yyyy}/README|返回日记目录]] | [[${nextPath}|${nextStr}]] ➡️`;
+%>

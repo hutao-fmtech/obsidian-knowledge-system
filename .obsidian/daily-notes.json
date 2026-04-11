@@ -1,4 +1,5 @@
 {
   "folder": "20-日志/日记",
+  "format": "YYYY/MM/YYYY-MM-DD",
   "template": "00-系统/templates/daily-note-template"
 }

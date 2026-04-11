@@ -1,25 +1,25 @@
 ---
-date: {{date:YYYY-MM-DD}}
-week: {{date:YYYY-[W]ww}}
+date: <% tp.date.now("YYYY-MM-DD") %>
+week: <% tp.date.now("YYYY-[W]ww") %>
 tags: [周记, 回顾]
 ---
 
-# {{date:YYYY年第ww周}} 周记
+# <% tp.date.now("YYYY年第ww周") %> 周记
 
-> 📅 {{date:YYYY-MM-DD}} ~ {{date+6d:YYYY-MM-DD}}
+> 📅 <% tp.date.now("YYYY-MM-DD") %> ~ <% tp.date.now("YYYY-MM-DD", 6) %>
 
 ## 📖 本周概览
 
 ### 工作日
-- [[{{date:YYYY-MM-DD}}|周一]]
-- [[{{date+1d:YYYY-MM-DD}}|周二]]
-- [[{{date+2d:YYYY-MM-DD}}|周三]]
-- [[{{date+3d:YYYY-MM-DD}}|周四]]
-- [[{{date+4d:YYYY-MM-DD}}|周五]]
+- [[<% tp.date.now("YYYY-MM-DD") %>|周一]]
+- [[<% tp.date.now("YYYY-MM-DD", 1) %>|周二]]
+- [[<% tp.date.now("YYYY-MM-DD", 2) %>|周三]]
+- [[<% tp.date.now("YYYY-MM-DD", 3) %>|周四]]
+- [[<% tp.date.now("YYYY-MM-DD", 4) %>|周五]]
 
 ### 周末
-- [[{{date+5d:YYYY-MM-DD}}|周六]]
-- [[{{date+6d:YYYY-MM-DD}}|周日]]
+- [[<% tp.date.now("YYYY-MM-DD", 5) %>|周六]]
+- [[<% tp.date.now("YYYY-MM-DD", 6) %>|周日]]
 
 ## 🎯 本周成就
 
@@ -76,4 +76,4 @@ tags: [周记, 回顾]
 
 ---
 
-⬅️ [[{{date-7d:YYYY-[W]ww}}|上周]] | [[20-日志/周记/README|返回周记目录]] | [[{{date+7d:YYYY-[W]ww}}|下周]] ➡️
+⬅️ [[<% tp.date.now("YYYY-[W]ww", -7) %>|上周]] | [[20-日志/周记/README|返回周记目录]] | [[<% tp.date.now("YYYY-[W]ww", 7) %>|下周]] ➡️
