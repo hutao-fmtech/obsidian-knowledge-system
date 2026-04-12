@@ -1,6 +1,7 @@
 [
   "dataview",
   "calendar",
-  "templater-obsidian",
-  "obsidian-excalidraw-plugin"
+  "obsidian-excalidraw-plugin",
+  "quickadd",
+  "templater-obsidian"
 ]
