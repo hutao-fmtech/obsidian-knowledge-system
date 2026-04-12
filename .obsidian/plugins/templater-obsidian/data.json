@@ -40,15 +40,15 @@
     },
     {
       "folder": "10-卡片盒/概念卡片",
-      "template": "00-系统/templates/zettelkasten-template.md"
+      "template": "00-系统/templates/zettelkasten-concept-template.md"
     },
     {
       "folder": "10-卡片盒/方法卡片",
-      "template": "00-系统/templates/zettelkasten-template.md"
+      "template": "00-系统/templates/zettelkasten-method-template.md"
     },
     {
       "folder": "10-卡片盒/观点卡片",
-      "template": "00-系统/templates/zettelkasten-template.md"
+      "template": "00-系统/templates/zettelkasten-opinion-template.md"
     },
     {
       "folder": "10-卡片盒/索引卡片",
