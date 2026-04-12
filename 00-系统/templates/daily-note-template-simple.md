@@ -45,4 +45,4 @@ tags: [日记]
 
 ---
 
-⬅️ [[<% tp.date.now("YYYY-MM-DD", -1) %>]] | [[20-日志/日记/<% tp.date.now("YYYY") %>/README|返回日记目录]] | [[<% tp.date.now("YYYY-MM-DD", 1) %>]] ➡️
+⬅️ [[20-日志/日记/<% tp.date.now("YYYY", -1) %>/<% tp.date.now("MM", -1) %>/<% tp.date.now("YYYY-MM-DD", -1) %>|<% tp.date.now("YYYY-MM-DD", -1) %>]] | [[20-日志/日记/<% tp.date.now("YYYY") %>/README|返回日记目录]] | [[20-日志/日记/<% tp.date.now("YYYY", 1) %>/<% tp.date.now("MM", 1) %>/<% tp.date.now("YYYY-MM-DD", 1) %>|<% tp.date.now("YYYY-MM-DD", 1) %>]] ➡️
