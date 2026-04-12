@@ -165,5 +165,5 @@ category: 工作项目
 ---
 
 **创建时间**: <% tp.date.now("YYYY-MM-DD") %>
-**最后更新**: <% tp.date.now("YYYY-MM-DD") %>
+**最后更新**: `= dateformat(this.file.mtime, "yyyy-MM-dd")`
 **项目状态**: 🚧 进行中

@@ -124,5 +124,5 @@ SORT status ASC, priority DESC
 ---
 
 **创建时间**: <% tp.date.now("YYYY-MM-DD") %>
-**最后更新**: <% tp.date.now("YYYY-MM-DD") %>
+**最后更新**: `= dateformat(this.file.mtime, "yyyy-MM-dd")`
 **健康度**: 🟢

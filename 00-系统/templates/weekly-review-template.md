@@ -1,25 +1,25 @@
 ---
 date: <% tp.date.now("YYYY-MM-DD") %>
-week: <% tp.date.now("YYYY-[W]ww") %>
+week: <% tp.date.now("YYYY-[W]WW") %>
 tags: [周记, 回顾]
 ---
 
-# <% tp.date.now("YYYY年第ww周") %> 周记
+# <% tp.date.now("YYYY年第WW周") %> 周记
 
 > 📅 <% tp.date.now("YYYY-MM-DD") %> ~ <% tp.date.now("YYYY-MM-DD", 6) %>
 
 ## 📖 本周概览
 
 ### 工作日
-- [[<% tp.date.now("YYYY-MM-DD") %>|周一]]
-- [[<% tp.date.now("YYYY-MM-DD", 1) %>|周二]]
-- [[<% tp.date.now("YYYY-MM-DD", 2) %>|周三]]
-- [[<% tp.date.now("YYYY-MM-DD", 3) %>|周四]]
-- [[<% tp.date.now("YYYY-MM-DD", 4) %>|周五]]
+- [[20-日志/日记/<% tp.date.now("YYYY") %>/<% tp.date.now("MM") %>/<% tp.date.now("YYYY-MM-DD") %>|周一]]
+- [[20-日志/日记/<% tp.date.now("YYYY", 1) %>/<% tp.date.now("MM", 1) %>/<% tp.date.now("YYYY-MM-DD", 1) %>|周二]]
+- [[20-日志/日记/<% tp.date.now("YYYY", 2) %>/<% tp.date.now("MM", 2) %>/<% tp.date.now("YYYY-MM-DD", 2) %>|周三]]
+- [[20-日志/日记/<% tp.date.now("YYYY", 3) %>/<% tp.date.now("MM", 3) %>/<% tp.date.now("YYYY-MM-DD", 3) %>|周四]]
+- [[20-日志/日记/<% tp.date.now("YYYY", 4) %>/<% tp.date.now("MM", 4) %>/<% tp.date.now("YYYY-MM-DD", 4) %>|周五]]
 
 ### 周末
-- [[<% tp.date.now("YYYY-MM-DD", 5) %>|周六]]
-- [[<% tp.date.now("YYYY-MM-DD", 6) %>|周日]]
+- [[20-日志/日记/<% tp.date.now("YYYY", 5) %>/<% tp.date.now("MM", 5) %>/<% tp.date.now("YYYY-MM-DD", 5) %>|周六]]
+- [[20-日志/日记/<% tp.date.now("YYYY", 6) %>/<% tp.date.now("MM", 6) %>/<% tp.date.now("YYYY-MM-DD", 6) %>|周日]]
 
 ## 🎯 本周成就
 
@@ -76,4 +76,4 @@ tags: [周记, 回顾]
 
 ---
 
-⬅️ [[<% tp.date.now("YYYY-[W]ww", -7) %>|上周]] | [[20-日志/周记/README|返回周记目录]] | [[<% tp.date.now("YYYY-[W]ww", 7) %>|下周]] ➡️
+⬅️ [[20-日志/周记/<% tp.date.now("YYYY-[W]WW", -7) %>|上周]] | [[20-日志/周记/README|返回周记目录]] | [[20-日志/周记/<% tp.date.now("YYYY-[W]WW", 7) %>|下周]] ➡️
