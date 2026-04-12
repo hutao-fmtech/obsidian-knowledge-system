@@ -25,6 +25,34 @@
     {
       "folder": "20-日志/月记",
       "template": "00-系统/templates/monthly-review-template.md"
+    },
+    {
+      "folder": "02-项目/工作项目",
+      "template": "00-系统/templates/work-project-template.md"
+    },
+    {
+      "folder": "02-项目/个人项目",
+      "template": "00-系统/templates/personal-project-template.md"
+    },
+    {
+      "folder": "02-项目/学习项目",
+      "template": "00-系统/templates/learning-project-template.md"
+    },
+    {
+      "folder": "10-卡片盒/概念卡片",
+      "template": "00-系统/templates/zettelkasten-template.md"
+    },
+    {
+      "folder": "10-卡片盒/方法卡片",
+      "template": "00-系统/templates/zettelkasten-template.md"
+    },
+    {
+      "folder": "10-卡片盒/观点卡片",
+      "template": "00-系统/templates/zettelkasten-template.md"
+    },
+    {
+      "folder": "10-卡片盒/索引卡片",
+      "template": "00-系统/templates/moc-template.md"
     }
   ],
   "enable_file_templates": false,

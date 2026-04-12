@@ -1,12 +1,12 @@
 ---
-title: "MOC - <% tp.file.title %>"
+title: "<% tp.file.title %>"
 created: <% tp.date.now("YYYY-MM-DD") %>
 tags: [MOC, 知识地图]
 type: 索引卡片
 status: 🌱 建设中
 ---
 
-# 🗺️ MOC - <% tp.file.title %>
+# 🗺️ <% tp.file.title %>
 
 > **Map of Content** - 这是一张关于 [主题] 的知识地图，帮助你系统化地理解和导航相关内容。
 
@@ -160,7 +160,7 @@ graph TD
 ```dataview
 TABLE status, priority
 FROM "02-项目"
-WHERE contains(tags, "<% tp.file.title %>")
+WHERE contains(tags, "主题标签")
 SORT status ASC
 ```
 
@@ -173,8 +173,3 @@ SORT status ASC
 - [更新内容]
 
 ---
-
-**创建时间**: <% tp.date.now("YYYY-MM-DD") %>
-**最后更新**: `= dateformat(this.file.mtime, "yyyy-MM-dd")`
-**完善度**: 🌱 萌芽 / 🌿 成长 / 🌳 成熟
-**相关笔记数**: [X] 篇

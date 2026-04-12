@@ -1,16 +1,11 @@
-<%*
-const zid = "Z" + tp.date.now("YYYYMMDDHHmmss");
-const ztitle = tp.file.title;
--%>
 ---
-id: <% zid %>
-title: "<% ztitle %>"
+title: "<% tp.file.title %>"
 created: <% tp.date.now("YYYY-MM-DD") %>
-tags: [卡片盒]
 type: 概念卡片
+tags: [卡片盒]
 ---
 
-# <% ztitle %>
+# <% tp.file.title %>
 
 ## 💡 核心观点
 
@@ -70,8 +65,3 @@ type: 概念卡片
 
 
 ---
-
-**卡片ID**: <% zid %>
-**创建时间**: <% tp.date.now("YYYY-MM-DD HH:mm") %>
-**最后更新**: `= dateformat(this.file.mtime, "yyyy-MM-dd HH:mm")`
-**卡片状态**: 🌱萌芽 / 🌿成长 / 🌳成熟
