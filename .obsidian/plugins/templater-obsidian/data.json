@@ -17,6 +17,14 @@
     {
       "folder": "20-日志/日记",
       "template": "00-系统/templates/daily-note-template.md"
+    },
+    {
+      "folder": "20-日志/周记",
+      "template": "00-系统/templates/weekly-review-template.md"
+    },
+    {
+      "folder": "20-日志/月记",
+      "template": "00-系统/templates/monthly-review-template.md"
     }
   ],
   "enable_file_templates": false,
