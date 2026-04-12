@@ -1,15 +1,14 @@
 ---
-title: "{{title}}"
+title: "<% tp.file.title %>"
 created: <% tp.date.now("YYYY-MM-DD") %>
-status: 🚧 进行中
-priority: 中
-start_date:
-end_date:
+status: "🎯 计划中"
+priority: "🟡 中"
+start_date: <% tp.date.now("YYYY-MM-DD") %>
+due_date:
 tags: [项目]
-category: 工作项目
 ---
 
-# 🎯 {{title}}
+# 🎯 <% tp.file.title %>
 
 ## 📋 项目概述
 
@@ -163,7 +162,3 @@ category: 工作项目
 
 
 ---
-
-**创建时间**: <% tp.date.now("YYYY-MM-DD") %>
-**最后更新**: `= dateformat(this.file.mtime, "yyyy-MM-dd")`
-**项目状态**: 🚧 进行中

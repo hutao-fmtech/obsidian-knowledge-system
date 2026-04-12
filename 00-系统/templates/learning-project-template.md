@@ -1,17 +1,15 @@
 ---
-title: "学习项目：{{title}}"
+title: "<% tp.file.title %>"
 created: <% tp.date.now("YYYY-MM-DD") %>
-tags:
-  - 项目/学习
-  - 学习
-status: ⏳ 待开始
-priority: 中
+tags: [项目, 学习]
+status: "🎯 计划中"
+priority: "🟡 中"
 start_date:
 end_date:
 progress: 0%
 ---
 
-# 学习项目：{{title}}
+# <% tp.file.title %>
 
 ## 🎯 学习目标
 
