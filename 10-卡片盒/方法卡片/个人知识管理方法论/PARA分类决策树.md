@@ -1,6 +1,6 @@
 ---
 title: "PARA分类决策树"
-type: 方法卡片
+type: "Method Card"
 created: 2026-01-22
 tags: [卡片盒, 方法卡片, PARA, 分类, 知识管理]
 ---

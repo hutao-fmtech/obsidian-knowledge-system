@@ -1,5 +1,6 @@
 ---
 title: "⚡ 快速笔记"
+type: "README"
 created: 2026-02-16
 tags: [收件箱, 快速笔记]
 ---

@@ -1,14 +1,16 @@
 ---
 title: "{{title}}"
+type: "Output"
 created: <% tp.date.now("YYYY-MM-DD") %>
 updated: <% tp.date.now("YYYY-MM-DD") %>
 tags:
   - 输出/博客
   - 草稿
-status: 草稿
+status: draft # 文档成熟度：draft / stable / deprecated；不能据此推断业务状态
 published_date:
 platform:
 reading_time:
+publication_status: drafting # drafting / ready / published
 ---
 
 # {{title}}

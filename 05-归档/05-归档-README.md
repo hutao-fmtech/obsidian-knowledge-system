@@ -1,5 +1,10 @@
 ---
 title: "📦 归档"
+type: "README"
+slot:
+  accepts: ["*"]
+  lifecycle: frozen
+  owner:
 created: 2026-01-22
 tags: [归档, 系统]
 ---

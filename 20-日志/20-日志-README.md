@@ -1,5 +1,10 @@
 ---
 title: "📅 时间日志"
+type: "README"
+slot:
+  accepts: ["Daily Log", "Weekly Log", "Monthly Log", "Annual Log"]
+  lifecycle: durable
+  owner:
 created: 2026-01-22
 tags: [日志, 索引]
 ---

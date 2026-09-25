@@ -1,5 +1,6 @@
 ---
 title: 分布式计算
+type: "README"
 tags:
   - 分布式计算
   - 并行计算

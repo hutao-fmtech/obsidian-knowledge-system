@@ -1,9 +1,10 @@
 ---
 title: "🚀 技术领导力"
+type: "README"
 created: 2026-02-08
 tags: [领域总览, 技术领导力, 管理]
 area: 技术领导力
-status: 🟢 健康
+health:
 ---
 
 # 🎯 技术领导力
@@ -60,16 +61,16 @@ status: 🟢 健康
 ## 📂 关联项目
 
 ```dataview
-TABLE status, priority, start_date
+TABLE default(project_status, "待确认") as "项目进度", priority, start_date
 FROM "02-项目"
-WHERE contains(category, "技术领导力") OR contains(tags, "技术领导力")
-SORT status ASC, priority DESC
+WHERE (area AND area = "技术领导力") OR (!area AND (contains(category, "技术领导力") OR contains(tags, "技术领导力")))
+SORT project_status ASC, priority DESC
 ```
 
 ## 🔗 相关索引
-- [[03-领域/技术领导力/team/1on1|👥 团队 1on1]]
-- [[03-领域/技术领导力/planning/roadmap|📅 技术路线图]]
-- [[03-领域/技术领导力/playbooks|🏗️ 实践手册]]
+- 👥 团队 1on1（`03-领域/技术领导力/team/1on1/`）
+- 📅 技术路线图（`03-领域/技术领导力/planning/roadmap/`）
+- 🏗️ 实践手册（`03-领域/技术领导力/playbooks/`）
 
 ---
 

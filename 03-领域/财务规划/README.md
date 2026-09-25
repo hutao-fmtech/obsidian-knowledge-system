@@ -1,10 +1,15 @@
 ---
 title: "💰 财务规划"
+type: "README"
+slot:
+  accepts: ["Finance Note", "Attested Computation"]
+  lifecycle: durable
+  owner:
 created: 2026-01-22
 tags:
   - 领域/财务
   - 领域总览
-health: 🟢
+health:
 last_review: 2026-01-22
 ---
 
@@ -170,7 +175,7 @@ last_review: 2026-01-22
 - [x] 风险管理
 
 ### 阅读书单
-- [[04-资源/阅读笔记/富爸爸穷爸爸|富爸爸穷爸爸]]
+- [[富爸爸穷爸爸|富爸爸穷爸爸]]
 - 《聪明的投资者》
 - 《指数基金投资指南》
 

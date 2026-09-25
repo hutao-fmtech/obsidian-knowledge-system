@@ -1,9 +1,10 @@
 ---
 title: "<% tp.file.title %>"
+type: "MOC"
 created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
 tags: [MOC, 知识地图]
-type: 索引卡片
-status: 🌱 建设中
+status: draft # 文档成熟度：draft / stable / deprecated；不能据此推断业务状态
 ---
 
 # 🗺️ <% tp.file.title %>
@@ -158,10 +159,10 @@ graph TD
 ## 📝 相关项目
 
 ```dataview
-TABLE status, priority
+TABLE project_status as "项目状态", priority
 FROM "02-项目"
 WHERE contains(tags, "主题标签")
-SORT status ASC
+SORT project_status ASC
 ```
 
 ## 🔄 更新日志

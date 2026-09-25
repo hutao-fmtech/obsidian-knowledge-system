@@ -1,5 +1,10 @@
 ---
 title: "💭 观点卡片"
+type: "README"
+slot:
+  accepts: ["Opinion Card"]
+  lifecycle: durable
+  owner: distill
 created: 2026-01-22
 tags:
   - 卡片盒/观点
@@ -93,7 +98,7 @@ SORT created DESC
 - 人生经历的感悟
 
 ### 如何创建？
-1. 使用[[00-系统/templates/zettelkasten-template|卡片模板]]
+1. 使用[[00-系统/templates/zettelkasten-opinion-template|卡片模板]]
 2. 标题格式："关于XX的思考" 或 "XX观点"
 3. 添加标签：#观点卡片 #领域
 4. 清晰表达核心观点

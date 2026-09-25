@@ -1,9 +1,12 @@
 ---
 title: "{{title}}"
+type: "Area Note"
 created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
 tags: [领域总览]
-area: 职业发展
-status: 🟢 健康
+status: draft # 文档成熟度：draft / stable / deprecated；不能据此推断业务状态
+area: # 本领域的规范名称，关联项目使用相同值
+health: # healthy / attention / at_risk；未评估时留空，不能从 status 推断
 ---
 
 # 🎯 {{title}}
@@ -70,10 +73,10 @@ status: 🟢 健康
 ## 📂 关联项目
 
 ```dataview
-TABLE status, priority, start_date
+TABLE project_status as "项目状态", priority, start_date
 FROM "02-项目"
-WHERE contains(category, "{{title}}")
-SORT status ASC, priority DESC
+WHERE this.area AND area = this.area
+SORT project_status ASC, priority DESC
 ```
 
 ## 📝 学习笔记
@@ -89,9 +92,11 @@ SORT status ASC, priority DESC
 
 ## 🔄 反思与改进
 
-### 最近进展
+### 更新记录（新到旧，标注日期与类型）
 
-#### <% tp.date.now("YYYY-MM") %>
+#### <% tp.date.now("YYYY-MM-DD") %>
+- **决策**：{{做了什么判断/选择，为什么}}
+- **进展**：{{发生了什么变化}}
 
 
 ### 待改进事项
@@ -124,5 +129,5 @@ SORT status ASC, priority DESC
 ---
 
 **创建时间**: <% tp.date.now("YYYY-MM-DD") %>
-**最后更新**: `= dateformat(this.file.mtime, "yyyy-MM-dd")`
-**健康度**: 🟢
+**最后更新**: <% tp.date.now("YYYY-MM-DD") %>
+**健康度**: 待评估（填写 `health` 后更新；不能从 `status` 推断）

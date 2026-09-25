@@ -1,5 +1,6 @@
 ---
 title: 计算机系统
+type: "README"
 tags:
   - 计算机系统
   - 体系结构

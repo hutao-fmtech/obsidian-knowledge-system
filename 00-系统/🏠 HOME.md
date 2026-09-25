@@ -1,6 +1,7 @@
 ---
 title: "🏠 Life Knowledge System"
 created: 2026-01-22
+type: "machine-index"
 tags: [系统, 主页]
 ---
 
@@ -44,21 +45,25 @@ dv.paragraph(
 ### 🎯 进行中的项目
 
 ```dataview
-TABLE status as "状态", priority as "优先级", start_date as "开始日期"
+TABLE default(project_status, status) as "项目状态", priority as "优先级", start_date as "开始日期", due_date as "截止日期"
 FROM "02-项目"
-WHERE status = "🚧 进行中"
+WHERE project_status = "active" OR (!project_status AND contains(["🚧 进行中", "进行中"], status))
 SORT priority DESC, start_date DESC
 LIMIT 5
 ```
+
+未标注项目进度的笔记不会列入本表；进入项目笔记确认后补充 `project_status`。`status: draft/stable` 只表示文档成熟度。
 
 ### ⏰ 待办事项
 
 ```dataview
 TASK
 FROM "02-项目" OR "03-领域"
-WHERE !completed
+WHERE !completed AND contains(file.etags, "#todo")
 LIMIT 10
 ```
+
+只有在笔记 frontmatter 的 `tags` 中明确加入 `todo` 的文件才纳入首页待办；普通习惯和未标注的清单不在这里汇总。
 
 ### 📚 最近笔记
 
@@ -91,9 +96,9 @@ LIMIT 8
 ## 📖 阅读中的书
 
 ```dataview
-TABLE author as "作者", status as "状态", rating as "评分"
-FROM "04-资源/阅读笔记"
-WHERE status = "阅读中"
+TABLE author as "作者", default(reading_status, status) as "阅读进度", rating as "评分"
+FROM "03-领域/读书写作/读书笔记"
+WHERE reading_status = "reading" OR (!reading_status AND contains(["阅读中", "正在阅读"], status))
 SORT file.mtime DESC
 ```
 
@@ -128,7 +133,7 @@ LIMIT 5
 ```dataview
 TABLE length(rows) as "数量"
 FROM ""
-GROUP BY folder
+GROUP BY file.folder
 SORT length(rows) DESC
 ```
 
@@ -151,15 +156,14 @@ SORT length(rows) DESC
 
 ## 🎨 领域一览
 
-| 领域 | 健康度 | 最近更新 |
-|------|--------|----------|
-| [[03-领域/职业发展/README\|💼 职业发展]] | 🟢 | 待更新 |
-| [[03-领域/技术领导力/README\|🚀 技术领导力]] | 🟢 | 2026-02-08 |
-| [[03-领域/软件工程/README\|🏗️ 软件工程]] | 🟢 | 2026-02-08 |
-| [[03-领域/健康管理/README\|🏃 健康管理]] | 🟡 | 待更新 |
-| [[03-领域/财务规划/README\|💰 财务规划]] | 🟢 | 待更新 |
-| [[03-领域/人际关系/README\|👥 人际关系]] | 🟢 | 待更新 |
-| [[03-领域/兴趣爱好/README\|🎨 兴趣爱好]] | 🟢 | 待更新 |
+```dataview
+TABLE WITHOUT ID file.link as "领域", choice(contains(["healthy", "🟢 健康", "🟢"], health), "🟢 健康", choice(contains(["attention", "🟡 需关注", "🟡"], health), "🟡 需关注", choice(contains(["at_risk", "🔴 有风险", "🔴"], health), "🔴 有风险", "待评估"))) as "已记录健康度", default(last_review, "未记录") as "评估日期"
+FROM "03-领域"
+WHERE file.name = "README" AND length(split(file.folder, "/")) = 2
+SORT file.folder ASC
+```
+
+健康度只显示领域入口中明确记录的 `health`（`healthy` / `attention` / `at_risk`），并附评估日期；没有评估记录时显示「待评估」。文档成熟度和最近编辑时间不能代替健康评估。
 
 ---
 

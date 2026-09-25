@@ -1,5 +1,6 @@
 ---
 title: "🌟 个人项目"
+type: "README"
 created: 2026-01-22
 tags: [项目, 个人发展]
 ---
@@ -13,10 +14,10 @@ tags: [项目, 个人发展]
 ## 📊 进行中的项目
 
 ```dataview
-TABLE status as "状态", priority as "优先级", deadline as "截止日期", progress as "进度"
+TABLE default(project_status, status) as "项目状态", priority as "优先级", due_date as "截止日期", progress as "进度"
 FROM "02-项目/个人项目"
-WHERE status = "🚧 进行中" AND file.name != "README"
-SORT priority DESC, deadline ASC
+WHERE (project_status = "active" OR (!project_status AND contains(["🚧 进行中", "进行中"], status))) AND file.name != "README"
+SORT priority DESC, due_date ASC
 ```
 
 ---
@@ -90,7 +91,7 @@ SORT priority DESC, deadline ASC
 
 ## 🔧 快速操作
 
-- [[00-系统/templates/project-note-template|新建个人项目]]
+- [[00-系统/templates/personal-project-template|新建个人项目]]
 - [[02-项目/02-项目-README|返回项目总览]]
 - [[03-领域-README|查看领域]]
 

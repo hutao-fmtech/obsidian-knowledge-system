@@ -1,9 +1,13 @@
-
 ---
+title: "<% tp.file.title %>"
+type: "Daily Log"
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
+tags: [日记]
+status: draft # 文档成熟度：draft / stable / deprecated；不能据此推断业务状态
 date: <% tp.date.now("YYYY-MM-DD") %>
 day: <% tp.date.now("dddd") %>
 week: <% tp.date.now("YYYY-[W]WW") %>
-tags: [日记]
 ---
 
 # <% tp.date.now("YYYY-MM-DD") %> <% tp.date.now("dddd") %>

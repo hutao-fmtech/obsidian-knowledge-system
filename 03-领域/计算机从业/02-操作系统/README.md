@@ -1,5 +1,6 @@
 ---
 title: 操作系统
+type: "README"
 tags:
   - 操作系统
   - OS

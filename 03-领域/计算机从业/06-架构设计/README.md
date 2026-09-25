@@ -1,5 +1,6 @@
 ---
 title: 架构设计
+type: "README"
 tags:
   - 架构设计
   - 设计模式

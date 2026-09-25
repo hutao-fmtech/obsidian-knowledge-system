@@ -1,8 +1,10 @@
 ---
 title: "<% tp.file.title %>"
+type: "Method Card"
 created: <% tp.date.now("YYYY-MM-DD") %>
-type: 方法卡片
+updated: <% tp.date.now("YYYY-MM-DD") %>
 tags: [卡片盒]
+status: draft # 文档成熟度：draft / stable / deprecated；不能据此推断业务状态
 ---
 
 # <% tp.file.title %>

@@ -1,5 +1,6 @@
 ---
 title: 无线射频
+type: "README"
 tags:
   - 无线射频
   - RF

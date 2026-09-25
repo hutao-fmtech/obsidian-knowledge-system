@@ -1,5 +1,6 @@
 ---
 title: 嵌入式
+type: "README"
 tags:
   - 嵌入式
   - 单片机

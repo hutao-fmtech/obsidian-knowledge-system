@@ -1,5 +1,6 @@
 ---
 title: 数据库
+type: "README"
 tags:
   - 数据库
   - SQL

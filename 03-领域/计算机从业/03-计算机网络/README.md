@@ -1,5 +1,6 @@
 ---
 title: 计算机网络
+type: "README"
 tags:
   - 计算机网络
   - TCP/IP

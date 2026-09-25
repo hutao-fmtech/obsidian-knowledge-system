@@ -1,5 +1,6 @@
 ---
 title: "📔 2026 年日记"
+type: "README"
 created: 2026-01-01
 tags: [日记, 索引]
 ---

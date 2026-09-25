@@ -1,5 +1,6 @@
 ---
 title: "💡 灵感闪念"
+type: "README"
 created: 2026-01-22
 tags: [收件箱, 灵感]
 ---

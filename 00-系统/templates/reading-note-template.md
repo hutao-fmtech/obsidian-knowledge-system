@@ -1,12 +1,15 @@
 ---
 title: "{{title}}"
+type: "Reading Note"
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
+tags: [阅读, 书籍]
+status: draft # 文档成熟度：draft / stable / deprecated；不能据此推断业务状态
 author:
-publisher:
-publish_date:
-read_date: <% tp.date.now("YYYY-MM-DD") %>
+start_date: # 实际开始阅读后填写
+finish_date:
 rating:
-tags: [阅读笔记, 书籍]
-status: 阅读中
+reading_status: to_read # to_read / reading / completed / paused / abandoned
 ---
 
 # 📖 {{title}}
@@ -20,7 +23,7 @@ status: 阅读中
 | 出版时间 |  |
 | ISBN |  |
 | 豆瓣评分 |  |
-| 阅读时间 | <% tp.date.now("YYYY-MM-DD") %> ~ |
+| 阅读时间 | 实际开始后填写 |
 | 我的评分 | ⭐️/5 |
 
 ## 🎯 阅读目的
@@ -103,4 +106,4 @@ status: 阅读中
 ---
 
 **创建时间**: <% tp.date.now("YYYY-MM-DD") %>
-**最后更新**: `= dateformat(this.file.mtime, "yyyy-MM-dd")`
+**最后更新**: <% tp.date.now("YYYY-MM-DD") %>

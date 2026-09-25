@@ -1,5 +1,6 @@
 ---
 title: "📚 学习项目"
+type: "README"
 created: 2026-01-22
 tags: [项目, 学习, 技能提升]
 ---
@@ -13,10 +14,10 @@ tags: [项目, 学习, 技能提升]
 ## 📊 进行中的学习项目
 
 ```dataview
-TABLE status as "状态", priority as "优先级", deadline as "截止日期", progress as "进度"
+TABLE default(project_status, status) as "项目状态", priority as "优先级", due_date as "截止日期", progress as "进度"
 FROM "02-项目/学习项目"
-WHERE status = "🚧 进行中" AND file.name != "README"
-SORT priority DESC, deadline ASC
+WHERE (project_status = "active" OR (!project_status AND contains(["🚧 进行中", "进行中"], status))) AND file.name != "README"
+SORT priority DESC, due_date ASC
 ```
 
 ---
@@ -193,8 +194,8 @@ GROUP BY status
 ## 🔗 相关资源
 
 - `[[10-卡片盒/方法卡片/学习方法]]`（待创建）
-- [[04-资源/课程学习|课程学习]]
-- [[30-输出/技术分享|学习成果分享]]
+- [[04-资源/学习材料/在线课程/README|课程学习]]
+- 学习成果分享（`30-输出/技术分享/`）
 
 ---
 

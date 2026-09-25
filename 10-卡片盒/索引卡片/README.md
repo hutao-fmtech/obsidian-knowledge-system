@@ -1,5 +1,10 @@
 ---
 title: "🗂️ 索引卡片 (MOC)"
+type: "README"
+slot:
+  accepts: ["MOC"]
+  lifecycle: durable
+  owner: distill
 created: 2026-01-22
 tags:
   - 卡片盒/索引

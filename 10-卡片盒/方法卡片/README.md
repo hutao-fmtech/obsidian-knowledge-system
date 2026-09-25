@@ -1,5 +1,10 @@
 ---
 title: "📋 方法卡片"
+type: "README"
+slot:
+  accepts: ["Method Card"]
+  lifecycle: durable
+  owner: distill
 created: 2026-01-22
 tags:
   - 卡片盒/方法
@@ -86,7 +91,7 @@ SORT created DESC
 - 从经验中提炼的最佳实践
 
 ### 如何创建？
-1. 使用[[00-系统/templates/zettelkasten-template|卡片模板]]
+1. 使用[[00-系统/templates/zettelkasten-method-template|卡片模板]]
 2. 标题格式："如何做XX"
 3. 添加标签：#方法卡片 #具体领域
 4. 记录核心步骤和原则

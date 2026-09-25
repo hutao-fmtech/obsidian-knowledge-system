@@ -1,5 +1,10 @@
 ---
 title: "🌟 领域总览"
+type: "README"
+slot:
+  accepts: ["Area Note"]
+  lifecycle: durable
+  owner:
 tags: [系统, 索引]
 ---
 
@@ -68,10 +73,10 @@ tags: [系统, 索引]
 ### 健康度统计
 
 ```dataview
-TABLE status as "健康度", file.mtime as "最近更新"
+TABLE file.folder as "领域", default(health, "待评估") as "已记录健康度", default(last_review, "未记录") as "评估日期"
 FROM "03-领域"
-WHERE file.name = "领域总览"
-SORT status ASC
+WHERE file.name = "README" AND length(split(file.folder, "/")) = 2
+SORT file.folder ASC
 ```
 
 ### 需要关注的领域

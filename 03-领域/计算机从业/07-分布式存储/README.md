@@ -1,5 +1,6 @@
 ---
 title: 分布式存储
+type: "README"
 tags:
   - 分布式存储
   - 分布式系统

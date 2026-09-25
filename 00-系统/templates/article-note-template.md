@@ -1,14 +1,13 @@
 ---
 title: "{{title}}"
+type: "Article Note"
 created: <% tp.date.now("YYYY-MM-DD") %>
-tags:
-  - 资源/文章笔记
-  - 待整理
-source_url:
+updated: <% tp.date.now("YYYY-MM-DD") %>
+tags: [阅读, 文章]
+status: draft # 文档成熟度：draft / stable / deprecated；不能据此推断业务状态
+source:
 author:
-read_date: <% tp.date.now("YYYY-MM-DD") %>
-rating:
-status: 未读
+reading_status: to_read # to_read / reading / completed / paused / abandoned
 ---
 
 # {{title}}

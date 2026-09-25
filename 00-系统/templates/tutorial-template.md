@@ -1,12 +1,15 @@
 ---
 title: "教程：{{title}}"
+type: "Output"
 created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
 tags:
   - 输出/教程
   - 草稿
+status: draft # 文档成熟度：draft / stable / deprecated；不能据此推断业务状态
 difficulty: 初级/中级/高级
 duration:
-status: 草稿
+publication_status: drafting # drafting / ready / published
 ---
 
 # 教程：{{title}}
@@ -353,7 +356,7 @@ project/
 
 ## 📝 更新日志
 
-- **<% tp.date.now("YYYY-MM-DD") %>**：创建教程
+- **2026-01-22**：创建教程
 - **日期**：更新内容
 
 ---

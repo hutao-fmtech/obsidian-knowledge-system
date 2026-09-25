@@ -1,5 +1,6 @@
 ---
 title: "📋 待处理"
+type: "README"
 created: 2026-01-22
 tags: [收件箱, 待处理]
 ---

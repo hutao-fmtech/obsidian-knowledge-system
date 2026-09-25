@@ -1,14 +1,19 @@
 ---
-type: project
-status: 规划中  # 规划中 | 进行中 | 已完成 | 已暂停 | 已取消
+title: "<% tp.file.title %>"
+type: "Project Note"
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
+tags:
+  - project
+status: draft # 文档成熟度：draft / stable / deprecated；不能据此推断业务状态
 priority: 中  # 高 | 中 | 低
 start-date:
 end-date:
 owner:
 team:
   -
-tags:
-  - project
+project_status: planned # planned / active / paused / completed / cancelled
+area: # 所属领域的规范名称，与领域笔记的 area 相同；未确定时留空
 ---
 
 # 项目: [项目名称]
@@ -128,7 +133,7 @@ tags:
 TABLE WITHOUT ID
   file.link as "Sprint",
   sprint-goal as "目标",
-  status as "状态"
+  project_status as "执行状态"
 FROM "projects/[项目名称]"
 WHERE type = "sprint"
 SORT file.name DESC

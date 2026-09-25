@@ -1,8 +1,10 @@
 ---
 title: "<% tp.file.title %>"
+type: "Opinion Card"
 created: <% tp.date.now("YYYY-MM-DD") %>
-type: 观点卡片
+updated: <% tp.date.now("YYYY-MM-DD") %>
 tags: [卡片盒]
+status: draft # 文档成熟度：draft / stable / deprecated；不能据此推断业务状态
 ---
 
 # <% tp.file.title %>

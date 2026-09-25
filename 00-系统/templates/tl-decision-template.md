@@ -1,13 +1,17 @@
 ---
-type: decision
+title: "<% tp.file.title %>"
+type: "decision"
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
+tags:
+  - decision
+status: draft # 文档成熟度：draft / stable / deprecated；不能据此推断业务状态
 decision-type: 技术  # 技术 | 产品 | 组织 | 流程
-status: 待决策  # 待决策 | 已决策 | 已执行 | 已废弃
 date: <% tp.date.now("YYYY-MM-DD") %>
 decision-makers:
   -
 impact: 中  # 高 | 中 | 低
-tags:
-  - decision
+decision_status: pending # pending / decided / executed / cancelled
 ---
 
 # 决策: [决策标题]

@@ -1,7 +1,12 @@
 ---
+title: "<% tp.file.title %>"
+type: "Monthly Log"
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
+tags: [月记, 复盘]
+status: draft # 文档成熟度：draft / stable / deprecated；不能据此推断业务状态
 date: <% tp.date.now("YYYY-MM-DD") %>
 month: <% tp.date.now("YYYY-MM") %>
-tags: [月记, 复盘]
 ---
 
 # <% tp.date.now("YYYY年MM月") %> 月度复盘

@@ -3,7 +3,7 @@ title: Zettelkasten卡片盒笔记法
 tags: [卡片盒, 方法卡片, 知识管理, 笔记方法]
 created: 2026-01-22
 updated: 2026-01-22
-type: 方法卡片
+type: "Method Card"
 id: Z20260122100100
 ---
 

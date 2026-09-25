@@ -1,9 +1,10 @@
 ---
 title: "💼 职业发展"
+type: "README"
 created: 2026-01-22
 tags: [领域总览, 职业发展]
 area: 职业发展
-status: 🟢 健康
+health:
 ---
 
 # 🎯 职业发展领域总览
@@ -170,10 +171,10 @@ status: 🟢 健康
 ## 📂 关联项目
 
 ```dataview
-TABLE status, priority, start_date
+TABLE default(project_status, "待确认") as "项目进度", priority, start_date
 FROM "02-项目"
-WHERE contains(category, "职业发展") OR contains(tags, "职业发展")
-SORT status ASC, priority DESC
+WHERE (area AND area = "职业发展") OR (!area AND (contains(category, "职业发展") OR contains(tags, "职业发展")))
+SORT project_status ASC, priority DESC
 ```
 
 ---
@@ -284,9 +285,9 @@ SORT status ASC, priority DESC
 
 ### Life Knowledge System (本库)
 - [[00-系统/🏠 HOME|返回主页]]
-- [[10-卡片盒/索引卡片/MOC-职业发展|职业发展知识地图]]
-- [[04-资源/阅读笔记/README|技术/管理阅读笔记]]
-- [[30-输出/技术分享/README|技术分享内容]]
+- [[MOC-职业发展|职业发展知识地图]]
+- [[03-领域/读书写作/读书笔记/README|技术/管理阅读笔记]]
+- [[30-输出/30-输出-README|技术分享内容]]
 
 ### tech-lead-vault (工作库)
 - 日常工作执行和项目管理

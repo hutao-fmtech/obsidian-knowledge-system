@@ -1,5 +1,6 @@
 ---
 title: "📎 附件库"
+type: "README"
 created: 2026-01-22
 tags: [附件, 系统]
 ---

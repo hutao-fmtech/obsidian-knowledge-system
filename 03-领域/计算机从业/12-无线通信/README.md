@@ -1,5 +1,6 @@
 ---
 title: 无线通信
+type: "README"
 tags:
   - 无线通信
   - 移动通信

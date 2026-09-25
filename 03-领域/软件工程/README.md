@@ -1,9 +1,10 @@
 ---
 title: "🏗️ 软件工程"
+type: "README"
 created: 2026-02-24
 tags: [领域总览, 软件工程]
 area: 软件工程
-status: 🟢 健康
+health:
 ---
 
 # 🏗️ 软件工程
@@ -64,10 +65,10 @@ status: 🟢 健康
 ## 📂 关联项目
 
 ```dataview
-TABLE status, priority, start_date
+TABLE default(project_status, "待确认") as "项目进度", priority, start_date
 FROM "02-项目"
-WHERE contains(tags, "软件工程")
-SORT status ASC, priority DESC
+WHERE (area AND area = "软件工程") OR (!area AND (contains(tags, "软件工程")))
+SORT project_status ASC, priority DESC
 ```
 
 ## 🔗 相关卡片

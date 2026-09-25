@@ -1,5 +1,6 @@
 ---
 title: 物联网
+type: "README"
 tags:
   - 物联网
   - IoT

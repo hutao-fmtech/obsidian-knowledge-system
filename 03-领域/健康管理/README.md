@@ -1,10 +1,11 @@
 ---
 title: "🏃 健康管理"
+type: "README"
 created: 2026-01-22
 tags:
   - 领域/健康
   - 领域总览
-health: 🟢
+health:
 last_review: 2026-01-22
 ---
 

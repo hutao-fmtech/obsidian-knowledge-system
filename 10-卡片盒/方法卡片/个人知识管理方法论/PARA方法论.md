@@ -3,7 +3,7 @@ title: PARA方法论
 tags: [卡片盒, 方法卡片, 知识管理, 生产力]
 created: 2026-01-22
 updated: 2026-01-22
-type: 方法卡片
+type: "Method Card"
 id: Z20260122100000
 ---
 

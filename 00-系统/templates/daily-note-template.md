@@ -12,10 +12,15 @@ if (tp.file.path(true) !== targetPath + ".md") {
 }
 -%>
 ---
+title: "<% tp.file.title %>"
+type: "Daily Log"
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
+tags: [日记]
+status: draft # 文档成熟度：draft / stable / deprecated；不能据此推断业务状态
 date: <% date %>
 day: <% moment(date).format("dddd") %>
 week: <% moment(date).format("YYYY-[W]WW") %>
-tags: [日记]
 ---
 
 

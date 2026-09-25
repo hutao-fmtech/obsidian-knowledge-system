@@ -1,7 +1,12 @@
 ---
+title: "<% tp.file.title %>"
+type: "Weekly Log"
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
+tags: [周记, 回顾]
+status: draft # 文档成熟度：draft / stable / deprecated；不能据此推断业务状态
 date: <% tp.date.now("YYYY-MM-DD") %>
 week: <% tp.date.now("YYYY-[W]WW") %>
-tags: [周记, 回顾]
 ---
 
 # <% tp.date.now("YYYY年第WW周") %> 周记

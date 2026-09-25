@@ -1,10 +1,11 @@
 ---
 title: "🎨 兴趣爱好"
+type: "README"
 created: 2026-01-22
 tags:
   - 领域/兴趣爱好
   - 领域总览
-health: 🟢
+health:
 last_review: 2026-01-22
 ---
 
@@ -61,8 +62,8 @@ last_review: 2026-01-22
 - **年度目标**：阅读X本书
 
 ### 正在阅读
-- [[04-资源/阅读笔记/书名1|书名1]]
-- [[04-资源/阅读笔记/书名2|书名2]]
+- [[书名1|书名1]]
+- [[书名2|书名2]]
 
 ### 待读清单
 - [ ]
@@ -70,8 +71,8 @@ last_review: 2026-01-22
 
 ### 本月阅读
 ```dataview
-TABLE author as "作者", status as "状态", rating as "评分"
-FROM "04-资源/阅读笔记"
+TABLE author as "作者", default(reading_status, status) as "阅读进度", rating as "评分"
+FROM "03-领域/读书写作/读书笔记"
 WHERE file.cday >= date(today) - dur(30 days)
 SORT file.cday DESC
 ```
@@ -327,8 +328,8 @@ SORT file.cday DESC
 - [[02-项目/个人项目/README|个人项目]]
 
 ### 输出
-- [[30-输出/作品集/README|作品集]]
-- [[30-输出/博客文章/README|博客文章]]
+- [[30-输出/30-输出-README|作品集]]
+- [[30-输出/30-输出-README|博客文章]]
 
 ---
 

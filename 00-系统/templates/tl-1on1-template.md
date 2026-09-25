@@ -1,11 +1,15 @@
 ---
-type: 1on1
-person:
-date: <% tp.date.now("YYYY-MM-DD") %>
-frequency: 双周  # 每周 | 双周 | 每月
+title: "<% tp.file.title %>"
+type: "1on1"
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
 tags:
   - 1on1
   - team
+status: draft # 文档成熟度：draft / stable / deprecated；不能据此推断业务状态
+person:
+date: <% tp.date.now("YYYY-MM-DD") %>
+frequency: 双周  # 每周 | 双周 | 每月
 ---
 
 # 1-1: [姓名] - <% tp.date.now("YYYY-MM-DD") %>

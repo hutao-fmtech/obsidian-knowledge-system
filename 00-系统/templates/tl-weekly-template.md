@@ -1,12 +1,16 @@
 ---
-type: meeting
+title: "<% tp.file.title %>"
+type: "meeting"
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
+tags:
+  - weekly
+  - meeting
+status: draft # 文档成熟度：draft / stable / deprecated；不能据此推断业务状态
 meeting-type: weekly
 date: <% tp.date.now("YYYY-MM-DD") %>
 attendees:
   -
-tags:
-  - weekly
-  - meeting
 ---
 
 # 周会 - Week <% tp.date.now("WW") %>, <% tp.date.now("YYYY") %>

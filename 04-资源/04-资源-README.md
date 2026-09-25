@@ -1,7 +1,16 @@
 ---
 title: "📚 资源库"
 created: 2026-01-22
+updated: 2026-09-24
 tags: [资源, 索引, PARA]
+type: "README"
+slot:
+  accepts: ["Reference"]
+  lifecycle: durable
+  owner:
+generated:
+  by: "human:terry"
+  at: "2026-01-22T00:00:00Z"
 ---
 
 # 📚 资源库
@@ -40,11 +49,13 @@ tags: [资源, 索引, PARA]
 
 ## 📂 资源分类
 
+现有正文按使用意图保存在 `参考资料/`（查阅）、`学习材料/`（学习）、`工具箱/`（操作）。下面的媒介和内容类别用于判断用途，无需为每个类别另建目录。
+
 ### 📖 阅读笔记
 
-**存放位置**：`04-资源/阅读笔记/`
+**存放位置**：外部书摘、文章和教程放在 `04-资源/学习材料/`；结合个人阅读的完整笔记放在 `03-领域/读书写作/读书笔记/`。
 
-- [[04-资源/阅读笔记/README|📚 阅读笔记总览]]
+- [[03-领域/读书写作/README|📚 读书写作总览]]
 - 书籍笔记 - 深度阅读和思考
 - 文章笔记 - 优质文章收藏
 - 论文笔记 - 学术论文研读
@@ -209,7 +220,7 @@ SORT rating DESC
 ```dataview
 LIST
 FROM "04-资源"
-WHERE status = "待处理" OR status = "未读"
+WHERE reading_status = "to_read" OR (!reading_status AND contains(["待处理", "未读", "待读"], status))
 ```
 
 ---
@@ -297,8 +308,8 @@ WHERE status = "待处理" OR status = "未读"
 ### 3. 创建主题索引
 
 对重要主题创建 MOC：
-- [[10-卡片盒/索引卡片/MOC-编程学习]]
-- [[10-卡片盒/索引卡片/MOC-效率工具]]
+- [[MOC-编程学习]]
+- [[MOC-效率工具]]
 
 ### 4. 建立资源清单
 
@@ -318,9 +329,12 @@ WHERE status = "待处理" OR status = "未读"
 ---
 title: "《书名》"
 author: "作者"
-type: 书籍
+type: "Reading Note"
+created: YYYY-MM-DD
+updated: YYYY-MM-DD
 tags: [阅读, 主题]
-status: 待读/在读/已读
+status: draft
+reading_status: to_read
 rating: ⭐⭐⭐⭐⭐
 source: "购买/借阅/电子书"
 date: YYYY-MM-DD
@@ -350,7 +364,9 @@ date: YYYY-MM-DD
 ---
 title: "文章标题"
 author: "作者"
-type: 文章
+type: "Article Note"
+created: YYYY-MM-DD
+updated: YYYY-MM-DD
 tags: [文章, 主题]
 source: "来源网站"
 url: "文章链接"
@@ -379,7 +395,9 @@ rating: ⭐⭐⭐⭐⭐
 ```markdown
 ---
 title: "工具名称"
-type: 工具
+type: "Tool Note"
+created: YYYY-MM-DD
+updated: YYYY-MM-DD
 category: 开发/效率/创作
 tags: [工具, 分类]
 platform: Web/Mac/Win/iOS/Android
@@ -523,13 +541,13 @@ rating: ⭐⭐⭐⭐⭐
 
 - [[00-系统/templates/reading-note-template|📚 新建读书笔记]]
 - [[00-系统/templates/article-note-template|📄 新建文章笔记]]
-- [[00-系统/templates/course-note-template|🎓 新建课程笔记]]
-- [[00-系统/templates/tool-note-template|🔧 新建工具笔记]]
+- 🎓 新建课程笔记
+- 🔧 新建工具笔记
 
 ### 快速查找
 
 **按类型查找**：
-- 书籍：`path:04-资源/阅读笔记 type:书籍`
+- 书籍：`path:03-领域/读书写作/读书笔记 type:"Reading Note"`
 - 文章：`path:04-资源 type:文章`
 - 工具：`path:04-资源 type:工具`
 
@@ -587,18 +605,18 @@ rating: ⭐⭐⭐⭐⭐
 ### 系统文件夹
 - [[00-系统/🏠 HOME|系统主页]]
 - [[10-卡片盒-README|卡片盒]]
-- [[02-项目/README|项目管理]]
+- [[02-项目/02-项目-README|项目管理]]
 - [[03-领域-README|领域管理]]
 
 ### 资源子类别
-- [[04-资源/阅读笔记/README|📚 阅读笔记]]
+- [[03-领域/读书写作/README|📚 阅读笔记]]
 - 📁 学习资源
 - 📁 工具箱
 - 📁 媒体资源
 
 ### 方法论
-- [[10-卡片盒/方法卡片/资源管理方法|资源管理方法]]
-- [[10-卡片盒/方法卡片/信息过滤|信息过滤]]
+- [[资源管理方法|资源管理方法]]
+- [[信息过滤|信息过滤]]
 - [[PARA方法论|PARA方法论]]
 
 ---

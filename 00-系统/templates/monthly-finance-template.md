@@ -1,6 +1,11 @@
 ---
-date: <% tp.file.creation_date("YYYY-MM") %>
+title: "<% tp.file.title %>"
+type: "Finance Note"
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
 tags: [财务, 月度记账]
+status: draft # 文档成熟度：draft / stable / deprecated；不能据此推断业务状态
+date: <% tp.file.creation_date("YYYY-MM") %>
 month: <% tp.file.creation_date("YYYY-MM") %>
 total_income: 0
 total_expense: 0

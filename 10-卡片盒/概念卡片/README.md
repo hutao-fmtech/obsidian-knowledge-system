@@ -1,5 +1,10 @@
 ---
 title: "🧩 概念卡片"
+type: "README"
+slot:
+  accepts: ["Concept Card", "MOC"]
+  lifecycle: durable
+  owner: distill
 created: 2026-01-22
 tags:
   - 卡片盒/概念
@@ -90,7 +95,7 @@ SORT created DESC
 - 发现概念间的联系
 
 ### 如何创建？
-1. 使用[[00-系统/templates/zettelkasten-template|卡片模板]]
+1. 使用[[00-系统/templates/zettelkasten-concept-template|卡片模板]]
 2. 标题直接用概念名称
 3. 添加标签：#概念卡片 #领域
 4. 用自己的话解释（费曼技巧）

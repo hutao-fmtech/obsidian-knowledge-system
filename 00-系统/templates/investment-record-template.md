@@ -1,7 +1,11 @@
 ---
-date: <% tp.file.creation_date("YYYY-MM-DD") %>
+title: "<% tp.file.title %>"
+type: "Finance Note"
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
 tags: [财务, 投资记录]
-type: 投资操作
+status: draft # 文档成熟度：draft / stable / deprecated；不能据此推断业务状态
+date: <% tp.file.creation_date("YYYY-MM-DD") %>
 ---
 
 # <% tp.file.creation_date("YYYY-MM-DD") %> 投资记录

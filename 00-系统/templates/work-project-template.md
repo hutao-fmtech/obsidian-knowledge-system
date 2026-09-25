@@ -1,11 +1,15 @@
 ---
 title: "<% tp.file.title %>"
+type: "Project Note"
 created: <% tp.date.now("YYYY-MM-DD") %>
-status: "🎯 计划中"
+updated: <% tp.date.now("YYYY-MM-DD") %>
+tags: [项目]
+status: draft # 文档成熟度：draft / stable / deprecated；不能据此推断业务状态
 priority: "🟡 中"
 start_date: <% tp.date.now("YYYY-MM-DD") %>
 due_date:
-tags: [项目]
+project_status: planned # planned / active / paused / completed / cancelled
+area: # 所属领域的规范名称，与领域笔记的 area 相同；未确定时留空
 ---
 
 # 🎯 <% tp.file.title %>

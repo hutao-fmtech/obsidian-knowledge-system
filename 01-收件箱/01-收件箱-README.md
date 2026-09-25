@@ -1,5 +1,11 @@
 ---
 title: "📥 收件箱"
+type: "README"
+slot:
+  accepts: ["Inbox Capture", "Article Note"]
+  lifecycle: transient
+  max_age_days: 14
+  owner:
 tags: [系统, 索引]
 ---
 
@@ -27,7 +33,7 @@ tags: [系统, 索引]
 ### 整理阶段 (每日晚上15分钟)
 1. 逐条检查收件箱内容
 2. 判断信息类型并移动:
-   - 🎯 可执行任务 → [[02-项目/README|项目]]
+   - 🎯 可执行任务 → [[02-项目/02-项目-README|项目]]
    - 🌟 持续关注 → [[03-领域-README|领域]]
    - 📚 参考资料 → [[04-资源-README|资源]]
    - 💡 知识洞察 → [[10-卡片盒-README|卡片盒]]

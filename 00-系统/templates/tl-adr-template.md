@@ -1,14 +1,18 @@
 ---
-type: adr
-status: 提议中  # 提议中 | 已接受 | 已废弃 | 已替代
+title: "<% tp.file.title %>"
+type: "adr"
+created: <% tp.date.now("YYYY-MM-DD") %>
+updated: <% tp.date.now("YYYY-MM-DD") %>
+tags:
+  - adr
+  - architecture
+status: draft # 文档成熟度：draft / stable / deprecated；不能据此推断业务状态
 date: <% tp.date.now("YYYY-MM-DD") %>
 decision-makers:
   -
 related-decisions:
   -
-tags:
-  - adr
-  - architecture
+adr_status: proposed # proposed / accepted / deprecated / superseded
 ---
 
 # ADR-XXXX: [决策标题]

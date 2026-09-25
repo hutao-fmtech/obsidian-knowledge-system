@@ -1,5 +1,6 @@
 ---
 title: 算法
+type: "README"
 tags:
   - 算法
   - 数据结构
