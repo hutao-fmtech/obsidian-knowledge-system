@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 # /// script
 # requires-python = ">=3.9"
 # dependencies = ["pyyaml"]
@@ -12,11 +12,11 @@ The type registry, status enum and business-status enums are parsed from the
 Frontmatter 规范 at run time, so that document stays the single source of truth.
 
 Usage (from the vault root):
-    /usr/bin/python3 .claude/skills/vault-lint/vault_lint.py            # errors + warnings
-    /usr/bin/python3 .claude/skills/vault-lint/vault_lint.py --level info
-    /usr/bin/python3 .claude/skills/vault-lint/vault_lint.py --json
-    /usr/bin/python3 .claude/skills/vault-lint/vault_lint.py --path 04-资源
-    uv run .claude/skills/vault-lint/vault_lint.py                      # if PyYAML is missing
+    python3 .agents/skills/vault-lint/vault_lint.py            # errors + warnings
+    python3 .agents/skills/vault-lint/vault_lint.py --level info
+    python3 .agents/skills/vault-lint/vault_lint.py --json
+    python3 .agents/skills/vault-lint/vault_lint.py --path 04-资源
+    uv run .agents/skills/vault-lint/vault_lint.py                      # if PyYAML is missing
 
 Exit code: 1 if any error-level finding, else 0.
 """
@@ -33,11 +33,13 @@ from urllib.parse import unquote
 try:
     import yaml
 except ImportError:
-    sys.exit("vault-lint: PyYAML missing. Run with /usr/bin/python3 or `uv run`.")
+    sys.exit("vault-lint: PyYAML missing. Run with python3 or `uv run`.")
 
 SPEC = "00-系统/Frontmatter 规范.md"
 SKIP_TOP = {"00-系统", "90-附件"}          # not content slots
-SKIP_DIRS = {".git", ".obsidian", ".trash", ".claude", "node_modules"}
+EXTRA_ROOTS = ["00-系统/agent-memory"]     # checked despite living under 00-系统
+MEMORY_NOW = "00-系统/agent-memory/now.md"  # holds path claims in frontmatter
+SKIP_DIRS = {".git", ".obsidian", ".trash", ".claude", ".agents", "node_modules"}
 NON_NOTES = {"CLAUDE.md", "AGENTS.md"}      # agent instructions, not notes
 README_RE = re.compile(r"^(?:.+-)?README\.md$")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
@@ -46,6 +48,14 @@ REQUIRED = ("title", "type", "created", "updated", "tags")
 LEGACY_WARN = ("ai_source",)
 LEGACY_INFO = ("source", "source_repo", "source_commit", "url")
 LEVELS = {"error": 0, "warn": 1, "info": 2}
+# 有固定格式的敏感信息（见 Frontmatter 规范的 visibility）。故意收紧，避免代码示例里的 password = "pass" 误报
+SENSITIVE = {
+    "证件号": re.compile(r"(?<![\d])\d{6}(?:19|20)\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])\d{3}[\dXx](?![\d])"),
+    "手机号": re.compile(r"(?<![\d])1[3-9]\d{9}(?![\d])"),
+    "密码": re.compile(r"(?:密码|口令)\s*[：:]\s*\S{3,}"),
+    "密钥": re.compile(r"(?<![A-Za-z0-9])(?:sk-[A-Za-z0-9_-]{32,}|ghp_[A-Za-z0-9]{36,}|AKIA[0-9A-Z]{16}|xox[bp]-[A-Za-z0-9-]{20,})"),
+}
+PUBLIC, PRIVATE = "🌐 可公开", "🔒 私有"
 
 # ---------------------------------------------------------------- spec parsing
 
@@ -188,16 +198,18 @@ def link_kind(target, dirs):
 def lint(root, only_path=None):
     types, statuses, business = load_spec(root)
     today = dt.date.today()
-    skills = set(os.listdir(os.path.join(root, ".claude", "skills")))
+    skills = set(os.listdir(os.path.join(root, ".agents", "skills")))
     links = LinkIndex(root)
     findings, slots, notes = [], 0, 0
 
     def add(sev, rule, path, detail=""):
         findings.append({"severity": sev, "rule": rule, "path": path, "detail": detail})
 
-    for top in sorted(os.listdir(root)):
-        if not re.match(r"^\d\d-", top) or top in SKIP_TOP or not os.path.isdir(os.path.join(root, top)):
-            continue
+    tops = [x for x in sorted(os.listdir(root))
+            if re.match(r"^\d\d-", x) and x not in SKIP_TOP and os.path.isdir(os.path.join(root, x))]
+    tops += [x for x in EXTRA_ROOTS if os.path.isdir(os.path.join(root, x))]
+    check_claims(root, add)
+    for top in tops:
         effective = {}
         for d, ds, fs in os.walk(os.path.join(root, top)):
             ds[:] = sorted(x for x in ds if x not in SKIP_DIRS and not x.startswith("."))
@@ -220,6 +232,32 @@ def lint(root, only_path=None):
                            README_RE.match(f) is not None, slot, types, statuses,
                            business, links, today, add)
     return findings, slots, notes
+
+
+def check_claims(root, add):
+    """Path claims in agent-memory/now.md: each needs path/by/until; expired ones warn."""
+    p = os.path.join(root, MEMORY_NOW)
+    if not os.path.exists(p):
+        return
+    fm, _, err = read_frontmatter(p)
+    claims = (fm or {}).get("claims") or []
+    now = dt.datetime.now(dt.timezone.utc)
+    for c in claims:
+        if not isinstance(c, dict) or not all(c.get(k) for k in ("path", "by", "until")):
+            add("error", "CLAIM_INVALID", MEMORY_NOW, "占用声明缺 path/by/until: %r" % (c,))
+            continue
+        until = c["until"]
+        if isinstance(until, str):
+            try:
+                until = dt.datetime.fromisoformat(until)
+            except ValueError:
+                add("error", "CLAIM_INVALID", MEMORY_NOW, "until 不是 ISO 时间: %r" % c["until"])
+                continue
+        if isinstance(until, dt.datetime):
+            if until.tzinfo is None:
+                until = until.astimezone()
+            if until < now:
+                add("warn", "CLAIM_EXPIRED", MEMORY_NOW, "%s 对 %s 的占用已于 %s 过期" % (c["by"], c["path"], c["until"]))
 
 
 def check_slot(slot, rel_d, types, skills, add):
@@ -283,6 +321,13 @@ def check_note(path, rel, is_readme, slot, types, statuses, business, links, tod
         for k in LEGACY_INFO:
             if k in fm:
                 add("info", "LEGACY_FIELD", rel, "%s → sources[].resource" % k)
+
+    kinds = sorted(k for k, r in SENSITIVE.items() if r.search(open(path, encoding="utf-8").read()))
+    vis = str((fm or {}).get("visibility") or "")
+    if kinds and PUBLIC in vis:
+        add("error", "PRIVACY_PUBLIC", rel, "标了可公开，但含%s" % "、".join(kinds))
+    elif kinds and PRIVATE not in vis:
+        add("warn", "SENSITIVE_UNMARKED", rel, "含%s，应显式标 visibility: \"%s\"" % ("、".join(kinds), PRIVATE))
 
     if slot and not is_readme:
         lc = slot.get("lifecycle")

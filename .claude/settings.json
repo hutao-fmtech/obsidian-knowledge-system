@@ -1,0 +1,11 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {"matcher": "startup|resume|clear|compact",
+       "hooks": [{"type": "command", "command": "python3 \"$CLAUDE_PROJECT_DIR/.agents/scripts/session_brief.py\" --hook", "timeout": 10}]}
+    ],
+    "Stop": [
+      {"hooks": [{"type": "command", "command": "python3 \"$CLAUDE_PROJECT_DIR/.agents/scripts/session_end_check.py\" --hook", "timeout": 10}]}
+    ]
+  }
+}
